@@ -1,5 +1,5 @@
 {
-  "name": "mauchede/rancher-api",
+  "name": "permosegaard/rancher-api",
   "type": "library",
   "description": "Rancher API is a set of PHP classes for interacting with Rancher",
   "keywords": [
@@ -7,7 +7,7 @@
     "client",
     "rancher"
   ],
-  "homepage": "http://github.com/mauchede/rancher-api",
+  "homepage": "http://github.com/permosegaard/rancher-api",
   "license": "MIT",
   "authors": [
     {
