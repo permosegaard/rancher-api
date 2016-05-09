@@ -62,6 +62,13 @@ class Container extends AbstractResource
     private $environment = array();
 
     /**
+     * @var array
+     * 
+     * #Type("array")
+     */
+    private $ports = array();
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -115,6 +122,14 @@ class Container extends AbstractResource
     public function getEnvironmentVariables()
     {
         return $this->environment;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPorts()
+    {
+        return $this->ports;
     }
 
     /**
@@ -276,6 +291,18 @@ class Container extends AbstractResource
     public function addEnvironmentVariable($key, $value)
     {
         $this->environment[ $key ] = $value;
+    }
+    
+    /**
+     * Add Port Mapping
+     * 
+     * @param string $protocol
+     * @param int $source
+     * @param int $destination
+     */
+    public function addPort($protocol, $source, $destination)
+    {
+        array_push( $this->ports, sprintf( "%d:%d/%s", $source, $destination, $protocol ) );
     }
 
     /**
