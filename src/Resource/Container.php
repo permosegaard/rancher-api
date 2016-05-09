@@ -64,7 +64,7 @@ class Container extends AbstractResource
     /**
      * @var array
      * 
-     * #Type("array")
+     * @Type("array")
      */
     private $ports = array();
     
