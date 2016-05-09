@@ -53,6 +53,13 @@ class Container extends AbstractResource
      * @Type("boolean")
      */
     private $tty = true;
+    
+    /**
+     * @var array
+     * 
+     * @Type("array")
+     */
+    private $environment = array();
 
     /**
      * Gets the commands
@@ -100,6 +107,14 @@ class Container extends AbstractResource
     public function getType()
     {
         return 'container';
+    }
+
+    /**
+     * @return array
+     */
+    public function getEnvironmentVariables()
+    {
+        return $this->environment;
     }
 
     /**
@@ -248,6 +263,19 @@ class Container extends AbstractResource
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * Add Environment Variable
+     * 
+     * @param string $key
+     * @param string $value
+     * 
+     * @return $this
+     */
+    public function addEnvironmentVariable($key, $value)
+    {
+        $this->environment[ $key ] = $value;
     }
 
     /**
