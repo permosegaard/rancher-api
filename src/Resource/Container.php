@@ -112,7 +112,7 @@ class Container extends AbstractResource
     /**
      * @return array
      */
-    public function getEnvironment()
+    public function getEnvironmentVariables()
     {
         return $this->environment;
     }
