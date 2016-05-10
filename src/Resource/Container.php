@@ -69,6 +69,13 @@ class Container extends AbstractResource
     private $ports = array();
     
     /**
+     * @var string
+     * 
+     * @Type("string")
+     */
+    private $networkMode;
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -130,6 +137,14 @@ class Container extends AbstractResource
     public function getPorts()
     {
         return $this->ports;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getNetworkMode()
+    {
+        return $this->networkMode;
     }
 
     /**
@@ -276,6 +291,20 @@ class Container extends AbstractResource
     public function setName($name)
     {
         $this->name = $name;
+
+        return $this;
+    }
+    
+    /**
+     * Sets the Network Mode.
+     *
+     * @param string $mode
+     *
+     * @return $this
+     */
+    public function setName($mode)
+    {
+        $this->networkMode = $mode;
 
         return $this;
     }
