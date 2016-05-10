@@ -76,6 +76,13 @@ class Container extends AbstractResource
     private $networkMode;
     
     /**
+     * @var array
+     * 
+     * @Type("array")
+     */
+    private $capAdd = array();
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -145,6 +152,14 @@ class Container extends AbstractResource
     public function getNetworkMode()
     {
         return $this->networkMode;
+    }
+    
+    /**
+     * @return array
+     */
+    public function getCapabilitiesAdd()
+    {
+        return $this->capAdd;
     }
 
     /**
@@ -332,6 +347,16 @@ class Container extends AbstractResource
     public function addPort($protocol, $source, $destination)
     {
         array_push( $this->ports, sprintf( "%d:%d/%s", $source, $destination, $protocol ) );
+    }
+    
+    /**
+     * Add Capability
+     * 
+     * @param string $capability
+     */
+    public function addCapability( $capability )
+    {
+        array_push( $this->capAdd, $capability );
     }
 
     /**
