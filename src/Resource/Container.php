@@ -83,6 +83,13 @@ class Container extends AbstractResource
     private $capAdd = array();
     
     /**
+     * @var string
+     * 
+     * @Type("string")
+     */
+    private $primaryIpAddress;
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -160,6 +167,14 @@ class Container extends AbstractResource
     public function getCapabilitiesAdd()
     {
         return $this->capAdd;
+    }
+    
+     /**
+     * @return string
+     */
+    public function getPrimaryIpAddress()
+    {
+        return $this->primaryIpAddress;
     }
 
     /**
@@ -320,6 +335,20 @@ class Container extends AbstractResource
     public function setNetworkMode($mode)
     {
         $this->networkMode = $mode;
+
+        return $this;
+    }
+    
+    /**
+     * Sets the Primary IP Address.
+     *
+     * @param string $ip
+     *
+     * @return $this
+     */
+    public function setPrimaryIpAddress($ip)
+    {
+        $this->primaryIpAddress = $ip;
 
         return $this;
     }
