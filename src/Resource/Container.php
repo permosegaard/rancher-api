@@ -317,7 +317,7 @@ class Container extends AbstractResource
      *
      * @return $this
      */
-    public function setName($mode)
+    public function setNetworkMode($mode)
     {
         $this->networkMode = $mode;
 
