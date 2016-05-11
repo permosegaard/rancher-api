@@ -90,6 +90,13 @@ class Container extends AbstractResource
     private $primaryIpAddress;
     
     /**
+     * @var array
+     * 
+     * @Type("array")
+     */
+    private $labels = array();
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -175,6 +182,14 @@ class Container extends AbstractResource
     public function getPrimaryIpAddress()
     {
         return $this->primaryIpAddress;
+    }
+    
+    /**
+     * @return array
+     */
+    public function getLabels()
+    {
+        return $this->labels;
     }
 
     /**
@@ -386,6 +401,19 @@ class Container extends AbstractResource
     public function addCapability( $capability )
     {
         array_push( $this->capAdd, $capability );
+    }
+    
+    /**
+     * Add Label
+     * 
+     * @param string $key
+     * @param string $value
+     * 
+     * @return $this
+     */
+    public function addLabel($key, $value)
+    {
+        $this->labels[ $key ] = $value;
     }
 
     /**
