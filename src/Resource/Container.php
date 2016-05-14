@@ -97,6 +97,13 @@ class Container extends AbstractResource
     private $labels = array();
     
     /**
+     * @var array
+     * 
+     * @Type("array")
+     */
+    private $devices = array();
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -190,6 +197,14 @@ class Container extends AbstractResource
     public function getLabels()
     {
         return $this->labels;
+    }
+    
+    /**
+     * @return array
+     */
+    public function getDevices()
+    {
+        return $this->devices;
     }
 
     /**
@@ -414,6 +429,19 @@ class Container extends AbstractResource
     public function addLabel($key, $value)
     {
         $this->labels[ $key ] = $value;
+    }
+    
+    /**
+     * Add Device
+     * 
+     * @param string $key
+     * @param string $value
+     * 
+     * @return $this
+     */
+    public function addDevice($key, $value)
+    {
+        $this->devices[ $key ] = $value;
     }
 
     /**
