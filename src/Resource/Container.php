@@ -104,6 +104,13 @@ class Container extends AbstractResource
     private $devices = array();
     
     /**
+     * @var array
+     * 
+     * @Type("array")
+     */
+    private $dataVolumes = array();
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -205,6 +212,14 @@ class Container extends AbstractResource
     public function getDevices()
     {
         return $this->devices;
+    }
+    
+    /**
+     * @return array
+     */
+    public function getDataVolumes()
+    {
+        return $this->dataVolumes;
     }
 
     /**
@@ -441,6 +456,18 @@ class Container extends AbstractResource
     public function addDevice($device)
     {
         array_push( $this->devices, $device );
+    }
+    
+    /**
+     * Add Data Volume
+     * 
+     * @param string $volume
+     * 
+     * @return $this
+     */
+    public function addDataVolume($volume)
+    {
+        array_push( $this->dataVolumes, $volume );
     }
 
     /**
