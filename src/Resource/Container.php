@@ -434,14 +434,13 @@ class Container extends AbstractResource
     /**
      * Add Device
      * 
-     * @param string $key
-     * @param string $value
+     * @param string $device
      * 
      * @return $this
      */
-    public function addDevice($key, $value)
+    public function addDevice($device)
     {
-        $this->devices[ $key ] = $value;
+        array_push( $this->devices, $device );
     }
 
     /**
