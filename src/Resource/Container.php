@@ -111,16 +111,16 @@ class Container extends AbstractResource
     private $dataVolumes = array();
     
     /**
-     * @var int
+     * @var integer
      *
-     * @Type("int")
+     * @Type("integer")
      */
     private $memory;
     
     /**
-     * @var int
+     * @var intger
      *
-     * @Type("int")
+     * @Type("integer")
      */
     private $memorySwap;
     
@@ -435,7 +435,7 @@ class Container extends AbstractResource
     /**
      * Sets the Memory.
      *
-     * @param int $bytes
+     * @param integer $bytes
      *
      * @return $this
      */
@@ -449,7 +449,7 @@ class Container extends AbstractResource
     /**
      * Sets the Swap Memory.
      *
-     * @param int $bytes
+     * @param integer $bytes
      *
      * @return $this
      */
