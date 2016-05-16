@@ -111,6 +111,20 @@ class Container extends AbstractResource
     private $dataVolumes = array();
     
     /**
+     * @var int
+     *
+     * @Type("int")
+     */
+    private $memory;
+    
+    /**
+     * @var int
+     *
+     * @Type("int")
+     */
+    private $memorySwap;
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -220,6 +234,26 @@ class Container extends AbstractResource
     public function getDataVolumes()
     {
         return $this->dataVolumes;
+    }
+    
+    /**
+     * Gets the Memory.
+     *
+     * @return string
+     */
+    public function getMemory()
+    {
+        return $this->memory;
+    }
+    
+    /**
+     * Gets the Swap Memory.
+     *
+     * @return string
+     */
+    public function getMemorySwap()
+    {
+        return $this->memorySwap;
     }
 
     /**
@@ -394,6 +428,34 @@ class Container extends AbstractResource
     public function setPrimaryIpAddress($ip)
     {
         $this->primaryIpAddress = $ip;
+
+        return $this;
+    }
+    
+    /**
+     * Sets the Memory.
+     *
+     * @param int $bytes
+     *
+     * @return $this
+     */
+    public function setMemory($bytes)
+    {
+        $this->memory = $bytes;
+
+        return $this;
+    }
+    
+    /**
+     * Sets the Swap Memory.
+     *
+     * @param int $bytes
+     *
+     * @return $this
+     */
+    public function setMemorySwap($bytes)
+    {
+        $this->memorySwap = $bytes;
 
         return $this;
     }
