@@ -125,6 +125,14 @@ class Container extends AbstractResource
     private $memorySwap;
     
     /**
+     * @var bool
+     *
+     * @Type("boolean")
+     */
+    private $privileged;
+    
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -315,6 +323,16 @@ class Container extends AbstractResource
     {
         return $this->tty;
     }
+    
+    /**
+     * Determines if is privileged.
+     *
+     * @return boolean
+     */
+    public function isPrivileged()
+    {
+        return $this->privileged;
+    }
 
     /**
      * Purges the container.
@@ -458,6 +476,20 @@ class Container extends AbstractResource
         $this->memorySwap = $bytes;
 
         return $this;
+    }
+    
+    /**
+     * Sets the Privileged status.
+     *
+     * @param bool $privileged
+     *
+     * @return $this
+     */
+    public function setPrivileged($privileged)
+    {
+        $this->privileged = $privileged;
+
+        return privileged;
     }
 
     /**
