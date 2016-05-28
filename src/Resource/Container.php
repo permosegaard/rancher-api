@@ -131,6 +131,12 @@ class Container extends AbstractResource
      */
     private $privileged;
     
+    /**
+     * @var array
+     * 
+     * @Type("array")
+     */
+    private $restartPolicy = array();
     
     /**
      * Gets the commands
@@ -262,6 +268,14 @@ class Container extends AbstractResource
     public function getMemorySwap()
     {
         return $this->memorySwap;
+    }
+    
+    /**
+     * @return array
+     */
+    public function getRestartPolicy()
+    {
+        return $this->restartPolicy;
     }
 
     /**
@@ -490,6 +504,18 @@ class Container extends AbstractResource
         $this->privileged = $privileged;
 
         return privileged;
+    }
+    
+    /**
+     * Add Restart Policy
+     * 
+     * @param string $value
+     * 
+     * @return $this
+     */
+    public function setRestartPolicy($value)
+    {
+        $this->restartPolicy[ "name" ] = $value;
     }
 
     /**
