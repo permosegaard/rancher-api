@@ -139,6 +139,13 @@ class Container extends AbstractResource
     private $restartPolicy = array();
     
     /**
+     * @var string
+     * 
+     * @Type("string")
+     */
+    private $volumeDriver;
+    
+    /**
      * Gets the commands
      *
      * @return array
@@ -276,6 +283,14 @@ class Container extends AbstractResource
     public function getRestartPolicy()
     {
         return $this->restartPolicy;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getVolumeDriver()
+    {
+        return $this->volumeDriver;
     }
 
     /**
@@ -516,6 +531,20 @@ class Container extends AbstractResource
     public function setRestartPolicy($value)
     {
         $this->restartPolicy[ "name" ] = $value;
+    }
+    
+    /**
+     * Sets the Volume Driver.
+     *
+     * @param string $driver
+     *
+     * @return $this
+     */
+    public function setVolumeDriver($driver)
+    {
+        $this->volumeDriver = $driver;
+
+        return $this;
     }
 
     /**
